@@ -118,7 +118,7 @@ if __name__ == "__main__":
 
 # 5. Arduino Microcontroller Einrichten
 
-Lade das folgender Arduino-Skript herunter und öffne es in der Arduino-IDE: [project.py](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/files/NanoEsp_classification.ino)
+Lade das folgender Arduino-Skript herunter und öffne es in der Arduino-IDE: [NanoEsp_classification.ino](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/files/NanoEsp_classification.ino)
 
 Füge die passenden Wlan-Daten ein:
 
