@@ -42,15 +42,19 @@ Eine genauere Beschreibung der einzelnen Schritte findet ihr unter [Getting Star
 # 2. Daten Sammeln
 
 **Einrichten:**  
-- [ ] Erstellt in eurer Python IDE ein neues Projekt und legt ein nues Haupt-File an (bspw. main.py).  
+- [x] Erstellt in eurer Python IDE ein neues Projekt und legt ein nues Haupt-File an (bspw. main.py).  
 Ladet das folgende Skript herunter und kopiert es in euer Python-Projekt sodass es direkt neben eurem Haupt-File zu sehen ist: [project.py](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/src/project.py)
 
 ![project.py Screenshot](https://raw.githubusercontent.com/Tarn017/Object-Classification-using-ESP-Cam/main/assets/project_py.png)
 
 **Abhängigkeiten installieren:**
-- [ ] Lade die folgende Datei herunter und kopiere sie in deinen Projektordner: [requirements_class.txt](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/src/requirements_class.txt)
+- [x] Lade die folgende Datei herunter und kopiere sie in deinen Projektordner: [requirements_class.txt](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/src/requirements_class.txt)
 
 - [ ] Gehe anschließend in deiner IDE unten auf das Terminal und installiere alle Pakete mit `pip install -r requirements_class.txt`:
+> bei "torch" behaubtet es, es wäre zu wenig Speicherplatz auf dem Gerät, obwohl mehr als das dreifache an Speicher frei ist???
+> > Lösungsversuche:
+> > - torch libary entfernen: meckert trotzdem
+> > - (noch nicht weiter, Tobi fragen)
 
 ![requirements Screenshot](https://raw.githubusercontent.com/Tarn017/Object-Classification-using-ESP-Cam/main/assets/requirements.png)
 
