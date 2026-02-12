@@ -6,7 +6,7 @@ Ziel dieser Anleitung ist es Daten für ein neuronales Netz mittels einer EspCam
 **Software:** Arduino, Python
 
 **Steps:**  
-1. EspCam einrichten
+-[ ] 1. EspCam einrichten
 2. Daten sammeln  
 3. Neuronales Netz trainieren  
 4. Neuronales Netz testen  
