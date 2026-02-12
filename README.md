@@ -1,3 +1,4 @@
+
 # Computer Vision using ESP-Cam
 
 Ziel dieser Anleitung ist es Daten für ein neuronales Netz mittels einer EspCam zu sammeln, dieses im Anschluss zu trainieren und es sich auf einem Arduino Microcontroller zu Nutze zu machen.
@@ -6,50 +7,55 @@ Ziel dieser Anleitung ist es Daten für ein neuronales Netz mittels einer EspCam
 **Software:** Arduino, Python
 
 **Steps:**  
-- [ ] 1. EspCam einrichten
-2. Daten sammeln  
-3. Neuronales Netz trainieren  
-4. Neuronales Netz testen  
-5. Arduino Microcontroller einrichten  
-6. Trainiertes Netz auf Microcontroller deployen  
+- [x] 1. EspCam einrichten
+- [ ] 2. Daten sammeln  
+- [ ] 3. Neuronales Netz trainieren  
+- [ ] 4. Neuronales Netz testen  
+- [ ] 5. Arduino Microcontroller einrichten  
+- [ ] 6. Trainiertes Netz auf Microcontroller deployen  
 
 # 1. Einrichten der EspCam
 
-1.	EspCam auf Adapter stecken
-2.	In der Arduino IDE: Board-Manager öffnen über Tools -> Board -> Boards Manager
-3.	esp32 by Espressif im Boardmanager installieren (Über Suchleiste oben suchen)
-4.	In Arduino IDE: File -> Examples -> Esp32 -> Camera -> CameraWebServer
-5.	Ergänze Wlan-Daten in CameraWebServer.ino
-6.	In der Tableiste oben gegebenenfalls auf board_config.h wechseln (Falls die `#define`-Einstellungen nicht direkt in dieser Datei getroffen werden) 
-7.	Vor `#define CAMERA_MODEL_WROVER_KIT` die Striche // hinzufügen
-8.	Vor `#define CAMERA_MODEL_AI_THINKER`  // entfernen
-9.	Zurück in CameraWebServer.ino passenden Port auswählen und als Board unter esp32 "AI Thinker Esp32-Cam"
-10.	Code uploaden
-11.	Auf dem Serial Monitor wir nun eine URL ausgegeben:
+- [x] 1.	EspCam auf Adapter stecken
+- [x] 2.	In der Arduino IDE: Board-Manager öffnen über Tools -> Board -> Boards Manager
+- [x] 3.	esp32 by Espressif im Boardmanager installieren (Über Suchleiste oben suchen)
+- [x] 4.	In Arduino IDE: File -> Examples -> Esp32 -> Camera -> CameraWebServer
+> **Beispiel (erstmal) nicht vorhanden**
+> > Board muss ausgewählt sein damit Beispiel sichtbar ist!
+- [x] 5.	Ergänze Wlan-Daten in CameraWebServer.ino
+- [x] 6.	In der Tableiste oben gegebenenfalls auf board_config.h wechseln (Falls die `#define`-Einstellungen nicht direkt in dieser Datei getroffen werden) 
+- [x] 7.	Vor `#define CAMERA_MODEL_WROVER_KIT` die Striche // hinzufügen
+- [x] 8.	Vor `#define CAMERA_MODEL_AI_THINKER`  // entfernen
+- [x] 9.	Zurück in CameraWebServer.ino passenden Port auswählen und als Board unter esp32 "AI Thinker Esp32-Cam"
+> Port _des Boards_!
+- [x] 10.	Code uploaden
+> Lässt sich nicht hochladen?
+> > 
+- [x] 11.	Auf dem Serial Monitor wir nun eine URL ausgegeben:
 
 ![cam_url](https://raw.githubusercontent.com/Tarn017/Object-Classification-using-ESP-Cam/main/assets/cam_url.png)
 
-12. Kopiere die URL nun in einen Brrowser der mit demselben WLAN, verbundne ist, wie die Kamera, um zu sehen ob alles korrekt funktioniert hat
+- [x] 12. Kopiere die URL nun in einen Brrowser der mit demselben WLAN, verbundne ist, wie die Kamera, um zu sehen ob alles korrekt funktioniert hat
 
 Eine genauere Beschreibung der einzelnen Schritte findet ihr unter [Getting Started With ESP32-CAM](https://lastminuteengineers.com/getting-started-with-esp32-cam/)
 
 # 2. Daten Sammeln
 
 **Einrichten:**  
-Erstellt in eurer Python IDE ein neues Projekt und legt ein nues Haupt-File an (bspw. main.py).  
+- [ ] Erstellt in eurer Python IDE ein neues Projekt und legt ein nues Haupt-File an (bspw. main.py).  
 Ladet das folgende Skript herunter und kopiert es in euer Python-Projekt sodass es direkt neben eurem Haupt-File zu sehen ist: [project.py](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/src/project.py)
 
 ![project.py Screenshot](https://raw.githubusercontent.com/Tarn017/Object-Classification-using-ESP-Cam/main/assets/project_py.png)
 
 **Abhängigkeiten installieren:**
-Lade die folgende Datei herunter und kopiere sie in deinen Projektordner: [requirements_class.txt](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/src/requirements_class.txt)
+- [ ] Lade die folgende Datei herunter und kopiere sie in deinen Projektordner: [requirements_class.txt](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/src/requirements_class.txt)
 
-Gehe anschließend in deiner IDE unten auf das Terminal und installiere alle Pakete mit `pip install -r requirements_class.txt`:
+- [ ] Gehe anschließend in deiner IDE unten auf das Terminal und installiere alle Pakete mit `pip install -r requirements_class.txt`:
 
 ![requirements Screenshot](https://raw.githubusercontent.com/Tarn017/Object-Classification-using-ESP-Cam/main/assets/requirements.png)
 
 **Los gehts:**  
-Beim einrichten der EspCam wurde eine URL ausgegeben. Diese wird für die nächsten Schritte benötigt.  
+- [ ] Beim einrichten der EspCam wurde eine URL ausgegeben. Diese wird für die nächsten Schritte benötigt.  
 Geht in euer Hauptskrip und fügt ganz oben die Zeile `from project import aufnahme` ein. Als nächstes fügt ihr darunter `if __name__ == "__main__":` ein. Alles was hiernah kommt muss nach rechts eingerückt werden. Nun kann `aufnahme` genutzt werden um Bilddaten zu sammeln. Sie nimmt alle paar Sekunden ein Bild auf und speichert dieses automatisch in einer benannten Klasse. Wichtig ist das jedes Bild nur Objekte der angegebenen Klasse enthält. Die Funktion ist folgendermaßen aufgebaut:  
 `aufnahme(url, interval, klasse, ordner)`: *url* entspricht der URL von der EspCam, diese kann einfach kopiert werden. Wichtig ist nur, dass sie in Anführungszeichen steht. *interval* entspricht der Frequenz, in der Bilder aufgenommen werden (1 bspw. für alle 1 Sekunden). *klasse* sollte dem Klassenname entsprechen, für dessen Klasse gerade Daten gesammelt werden. Für *ordner* kann ebenfalls ein beliebiger Name gewählt werden. Es wird ein Ordner mit selbigem Namen automatisch erstellt in dem die Klassen und Bilder gespeichert werden.
 
@@ -64,6 +70,7 @@ if __name__ == "__main__":
 Zum starten kann nun einfach das Skript ausgeführt werden. Für jede Klasse, für die Daten gesammelt werden sollen, muss das Skript separat ausgeführt werden. Ein umbenennen von *klasse* ist während das Skript läuft nicht möglich.
 
 # 3. Neuonales Netz Trainieren
+- [ ] trainiert
 
 Um ein Modell zu trainieren, muss nun zusätzlich ein Trainingsskript am Anfang importiert werden: `from project import CNN`. Konkret handelt es sich hierbei um ein Convolutional Neural Network, das sich flexibel einstellen lässt. Wichtig ist, dass die Funktion `CNN()` ebenfalls wieder eingerückt unter `if __name__ == "__main__":` steht. Hier eine kurze Erklärung, wie man die Funktion nutzt:  
 `CNN(train_path, epochs, lr, conv_filters, fully_layers, resize, model_name, train_split, droprate, augmentation, dec_lr)`  
@@ -99,6 +106,7 @@ if __name__ == "__main__":
     )
 ```
 # 4. Neuronales Netz Testen
+- [ ] getestet
 
 Um das Modell zu testen muss zusätzlich oben das entsprechende Skript importiert werden: `from project import testen_classification`. Diese nimmt live Bilder mit der EspCam auf und klassifiziert diese im Anschluss direkt.  
 `testen_classification(url, model_name, live, interval)`:  
@@ -118,17 +126,20 @@ if __name__ == "__main__":
 
 # 5. Arduino Microcontroller Einrichten
 
-Lade das folgender Arduino-Skript herunter und öffne es in der Arduino-IDE: [NanoEsp_classification.ino](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/files/NanoEsp_classification.ino)
+- [ ] Lade das folgender Arduino-Skript herunter und öffne es in der Arduino-IDE: [NanoEsp_classification.ino](https://github.com/Tarn017/Object-Classification-using-ESP-Cam/blob/main/files/NanoEsp_classification.ino)
 
-Füge die passenden Wlan-Daten ein:
+- [ ] Füge die passenden Wlan-Daten ein:
 
 ![wlan](https://raw.githubusercontent.com/Tarn017/Object-Classification-using-ESP-Cam/main/assets/wlan.png)
 
-Führe das Skript im nächsten Schritt aus. Öffne anschließend den Serial Monitor. Auf disem sollte nun die IP Adresse des Microcontrollers ausgegeben werden. Ist dort nichts zu sehen, drücke einmal den Reset-Button auf dem Microcontroller.
+- [ ] Führe das Skript im nächsten Schritt aus.
+- [ ] Öffne anschließend den Serial Monitor. Auf disem sollte nun die IP Adresse des Microcontrollers ausgegeben werden.
+- [ ] Ist dort nichts zu sehen, drücke einmal den Reset-Button auf dem Microcontroller.
 
 ![arduino_ip](https://raw.githubusercontent.com/Tarn017/Object-Classification-using-ESP-Cam/main/assets/arduino_ip.png)
 
 # 6. Neuronales Netz Deployen
+- [ ] deployen
 
 Im nächsten und letzten Schritt, werden Kamera, neuronales Netz und Microcontroller nun verbunden. Das Programm welches dafür gleich genutzt wird, baut dafür eine Verbindung sowohl zu Kamera als auch zu Microcontroller auf. Wird nun ein Signal vom Microcontroller gesendet (aktuell ist er so programmiert, dass ein Signal gesendet wird, wenn der an Pin D2 angeschlossene Knopf gedrückt wird, kann aber beliebig abgeändert werden), dann leitet der Laptop/PC dieses weiter an die EspCam, die ein Bild aufnimmt. Dieses wird zurück an den Laptop gesendet, der dieses klassifiziert. Das Ergebnis dieses Klassifikation wird anschließend zurück an den Microcontroller gesendet. Die vorhergesagte Klasse wird dort im String *klasse* gespeichert und die Sicherheit der Vorhersage in *conf*. Für diese Kommunikation wird das folgende Skript verwendet:  
 `neural_network_classification(url,arduino_ip, model_name)`:  
