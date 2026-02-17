@@ -1,4 +1,4 @@
-cd .venv/
+cd .venv/ 
 ls
 echo "[INFO] entered .venv/"
 pip install --upgrade pip
@@ -12,6 +12,4 @@ echo "[INFO] torch libraries installed"
 rm -r tmp_pip
 echo "[INFO] deleted tmp cache"
 echo "------------------------------------------------------------------------------------"
-
 echo "fertig! :)"
-
