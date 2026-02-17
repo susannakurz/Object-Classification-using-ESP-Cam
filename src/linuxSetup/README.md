@@ -1,3 +1,3 @@
 1. alle Dateien in diesem Ordner herunterladen
-2. requitements_class_Linux.txt ausführen `pip install -r requitements_class_Linux.txt`
-4. `pip install 'name-tar.gz` ausführen
+2. in Ordner `.venv/` im PyCharm-Projekt ablegen
+3. `bash setup_linux.sh` im PyCharm-Terminal ausführen ausführen
