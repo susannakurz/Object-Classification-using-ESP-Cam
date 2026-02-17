@@ -1,5 +1,15 @@
+cd .venv/
+echo "[INFO] entered .venv/"
 pip install --upgrade pip
-pip install -r .venv/requirements_class.txt
+echo "[INFO] upgraded pip"
+pip install -r requirements_class.txt
+echo "[INFO] non-torch libraries installed"
 mkdir tmp_pip
-TMPDIR=tmp_pip/ pip install --cache-dir=$TMPDIR -r ./venv/requirements_torch.txt
+echo "[INFO] tmp_pip cache-folder created"
+TMPDIR=tmp_pip/ pip install --cache-dir=$TMPDIR -r requirements_torch.txt
+echo "[INFO] torch libraries installed"
+rm -r tmp_pip
+echo "[INFO] deleted tmp cache"
+echo "------------------------------------------------------------------------------------"
 echo "fertig! :)"
+
