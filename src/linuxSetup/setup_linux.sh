@@ -11,5 +11,5 @@ TMPDIR=tmp_pip/ pip install --cache-dir=$TMPDIR -r requirements_torch.txt
 echo "[INFO] torch libraries installed"
 rm -r tmp_pip
 echo "[INFO] deleted tmp cache"
-echo "------------------------------------------------------------------------------------"
+echo "------------------------------------------------------------"
 echo "fertig! :)"
