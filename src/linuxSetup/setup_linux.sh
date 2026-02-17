@@ -1,5 +1,4 @@
 cd .venv/
-ls
 echo "[INFO] entered .venv/"
 pip install --upgrade pip
 echo "[INFO] upgraded pip"
@@ -13,4 +12,3 @@ rm -r tmp_pip
 echo "[INFO] deleted tmp cache"
 echo "------------------------------------------------------------------------------------"
 echo "fertig! :)"
-
